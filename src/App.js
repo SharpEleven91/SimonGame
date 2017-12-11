@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import $ from "jquery";
+import sound1 from './sounds/simonSound1.mp3';
+import sound2 from './sounds/simonSound2.mp3';
+import sound3 from './sounds/simonSound3.mp3';
+import sound4 from './sounds/simonSound4.mp3';
+import soundError from './sounds/simonError.mp3';
 import PowerButton from './PowerButton.js';
 import StartButton from './StartButton.js';
 import StrictButton from './StrictButton.js';
@@ -152,10 +157,10 @@ class App extends React.Component {
   
   // Play the colors corresponding audio file
   playAudio(color) {
-    let greenAudio = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3");
-    let blueAudio = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3");
-    let redAudio = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3");
-    let yellowAudio = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3");
+    let greenAudio = new Audio(sound1);
+    let blueAudio = new Audio(sound2);
+    let redAudio = new Audio(sound3);
+    let yellowAudio = new Audio(sound4);
     switch(color) {
       case "green":
         greenAudio.play();
@@ -198,6 +203,8 @@ class App extends React.Component {
   
   // notifies user that they have placed wrong input
   wrongInput() {
+    let errorSound = new Audio(soundError);
+    errorSound.play();
     $("#frame").addClass("shake-effect");
     setTimeout(() => {
       $("#frame").removeClass("shake-effect");
