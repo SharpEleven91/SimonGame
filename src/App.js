@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import $ from "jquery";
 import sound1 from './sounds/simonSound1.mp3';
 import sound2 from './sounds/simonSound2.mp3';
@@ -11,7 +10,6 @@ import StartButton from './StartButton.js';
 import StrictButton from './StrictButton.js';
 import StrictLight from './StrictLight.js';
 import Colors from './Colors.js';
-import ColorButton from './ColorButton.js';
 import Counter from './Counter.js';
 import logo from './logo.svg';
 import './App.css';
