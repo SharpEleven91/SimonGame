@@ -1,6 +1,7 @@
 import React from 'react';
 
 class ColorButton extends React.Component {
+    // eslint-disable-next-line
     constructor(props) {
       super(props);
     }

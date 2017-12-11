@@ -1,6 +1,10 @@
 import React from 'react';
 import ColorButton from './ColorButton.js';
 class Colors extends React.Component {
+    // eslint-disable-next-line
+    constructor(props) {
+      super(props);
+    }
     render() {
       return <div id="colors">
              <ColorButton color="green" click={this.props.click}/>

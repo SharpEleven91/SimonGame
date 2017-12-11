@@ -1,6 +1,7 @@
 import React from 'react';
 
 class PowerButton extends React.Component {
+    // eslint-disable-next-line
     constructor(props) {
       super(props);
     }

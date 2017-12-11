@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import $ from "jquery";
 import sound1 from './sounds/simonSound1.mp3';
 import sound2 from './sounds/simonSound2.mp3';
@@ -11,7 +11,6 @@ import StrictButton from './StrictButton.js';
 import StrictLight from './StrictLight.js';
 import Colors from './Colors.js';
 import Counter from './Counter.js';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends React.Component {
@@ -33,12 +32,12 @@ class App extends React.Component {
     let actions = this.state.actions.slice();
     if (this.state.power && !this.state.active) {
       let button = e.target.classList[0];
-      if (button == actions[this.state.clicks]) {
+      if (button === actions[this.state.clicks]) {
         this.playAudio(button);
         this.setState({
           clicks: this.state.clicks + 1,
         }, () => {
-          if (this.state.clicks == actions.length) {
+          if (this.state.clicks === actions.length) {
             this.setState({
               clicks: 0
             }, () => {
@@ -111,18 +110,13 @@ class App extends React.Component {
     switch(color) {
       case 1:
         return 'green'
-        break;
       case 2:
         return 'red'
-        break;
       case 3:
         return 'yellow'
-        break;
       case 4:
         return 'blue'
-        break;
       default:
-        return 'green'
         break;
     }
   }
@@ -175,6 +169,8 @@ class App extends React.Component {
       case "yellow":
         yellowAudio.play();
         break;
+      default: 
+        break;
     }
   } 
   
@@ -198,7 +194,7 @@ class App extends React.Component {
         count: this.state.count + 1,
       }, () => { this.addNewColorAction()})
       this.sequence();
-    } else if (this.state.power && this.state.gameStarted && this.state.count == 20) {
+    } else if (this.state.power && this.state.gameStarted && this.state.count === 20) {
       this.victory();
     }
     
@@ -227,7 +223,7 @@ class App extends React.Component {
   
   // set count to WIN and lock the game with active state until powered off or reset
   victory() {
-    if (this.state.count == 20) {
+    if (this.state.count === 20) {
       this.setState({
         count: "WIN",
         active: true,

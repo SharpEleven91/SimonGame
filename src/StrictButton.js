@@ -1,7 +1,7 @@
 import React from 'react';
 
 class StrictButton extends React.Component {
-
+    // eslint-disable-next-line
     constructor(props) {
       super(props);
     }
