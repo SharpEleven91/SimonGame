@@ -1,0 +1,325 @@
+@import url("https://fonts.googleapis.com/css?family=Bungee");
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+
+$black: #333333;
+$active-yellow: #fbc936;
+$active-green: #5cb975;
+$active-red: #ee685d;
+$active-blue: #679df6;
+  
+body {
+  padding: 0;
+  margin: 0;
+  background: #4c4c4c;
+  display: flex;
+  color: #333333;
+  justify-content: center;
+  font-family: "Bungee";
+}
+
+#frame {
+  position: fixed;
+  top: 100px;
+  height: 500px;
+  width: 500px;
+  border-radius: 50%;
+  .green {
+    background-color: #34a853;
+    cursor: pointer;
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    border-radius: 250px 0 0 0;
+    &:active {
+      background-color: #5cb975;
+    }
+  }
+  .red {
+    cursor: pointer;
+    position: relative;
+    top: -500px;
+    left: 250px;
+    transform: rotate(90deg);
+    background-color: #ea4335;
+    height: 250px;
+    width: 250px;
+    border-radius: 250px 0 0 0;
+    &:active {
+      background-color: #ee685d;
+    }
+  }
+  .yellow {
+    cursor: pointer;
+    position: relative;
+    transform: rotate(270deg);
+    background-color: #fbbc05;
+    height: 250px;
+    width: 255px;
+    border-radius: 250px 0 0 0;
+    &:active {
+      background-color: #fbc936;
+    }
+  }
+  .blue {
+    cursor: pointer;
+    position: relative;
+    left: 250px;
+    top: 250px;
+    transform: rotate(180deg);
+    background-color: #4285f4;
+    height: 250px;
+    width: 250px;
+    border-radius: 250px 0 0 0;
+    &:active {
+      background-color: #679df6;
+    }
+  }
+  .outer-mask {
+    pointer-events: none;
+    position: absolute;
+    background-color: transparent;
+    border: 18px solid $black;
+    width: 480px;
+    height: 480px;
+    top: -10px;
+    border-radius: 50%;
+    z-index: 10;
+    .vertical-line {
+      pointer-events: auto;
+      position: absolute;
+      left: 225px;
+      background-color: $black;
+      height: 480px;
+      width: 30px;
+    }
+    .horizontal-line {
+      pointer-events: auto;
+      position: absolute;
+      width: 480px;
+      height: 30px;
+      background-color: $black;
+      top: 225px;
+    }
+    .center {
+      pointer-events: auto;
+      background-color: $black;
+      position: absolute;
+      height: 250px;
+      width: 250px;
+      top: 115px;
+      left: 115px;
+      border-radius: 50%;
+      .center-content {
+        pointer-events: auto;
+        position: absolute;
+        background-color: #b1b1b5;
+        left: 25px;
+        top: 25px;
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        .simon-header {
+          color: white;
+          background-color: $black;
+          position: absolute;
+          top: 08px;
+          left: 10px;
+          height: 90px;
+          width: 180px;
+          border-radius: 140px 140px 0 0;
+          .text {
+            font-size: 45px;
+            position: absolute;
+            top: 09px;
+            left: 09px;
+          }
+        }
+        .button-wrapper {
+          background-color: transparent;
+          position: absolute;
+          border: 2px solid $black;
+          height: 87px;
+          width: 176px;
+          border-radius: 0px 0px 140px 140px;
+          top: 100px;
+          left: 10px;
+          .power-bg {
+            position: absolute;
+            background-color: $black;
+            border-radius: 3px;
+            height: 20px;
+            width: 50px;
+            top: 45px;
+            left: 63px;
+            .power-btn {
+              cursor: pointer;
+              position: absolute;
+              background-color: #4285f4;
+              top: 2px;
+              left: 2px;
+              border-radius: 3px;
+              height: 16px;
+              width: 15px;
+            }
+          }
+          .on {
+            font-size: 12px;
+            position: absolute;
+            left: 118px;
+            top: 27px;
+          }
+          .off {
+            font-size: 12px;
+            position: absolute;
+            left: 33px;
+            top: 27px;
+          }
+          .start-bg {
+            position: absolute;
+            top: 7px;
+            left: 79px;
+            border-radius: 50%;
+            background-color: $black;
+            height: 20px;
+            width: 20px;
+            .start-btn {
+              position: absolute;
+              left: 2px;
+              top: 2px;
+              height: 16px;
+              width: 16px;
+              background-color: #ea4335;
+              border-radius: 50%;
+              box-shadow: 0 1px 3px black;
+              &:active {
+                transform: scale(0.8);
+              }
+            }
+          }
+          .start-text {
+            position: absolute;
+            font-size: 10px;
+            left: 72px;
+            top: 13px;
+          }
+          .counter-wrapper {
+            .counter-text {
+              font-size: 10px;
+              position: absolute;
+              top: 13px;
+              left: 21px;
+            }
+            .counter-bg {
+            position: absolute;
+            background-color: #2b1414;
+            border: 3px solid black;
+            border-radius: 6px;
+            height: 17px;
+            width: 40px;
+            top: 5px;
+            left: 15px;
+            .counter {
+              position: absolute;
+              font-size: 15px;
+              top: -16px;
+              left: 3px;
+              font-family: 'Orbitron';
+              color: #ea4335;
+              }
+            }
+          }
+          .strict-active {
+            position: absolute;
+            left: 150px;
+            top: 5px;
+            background-color: $black;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            .strict-light-off {
+              position: absolute;
+              left: 1px;
+              top: 1px;
+              height: 6px;
+              width: 6px;
+              border-radius: 50%;
+              background-color: #2b1414;
+            }
+            .strict-light-on {
+              position: absolute;
+              left: 1px;
+              top: 1px;
+              height: 6px;
+              width: 6px;
+              border-radius: 50%;
+              background-color: #ea4335;
+            }
+          }
+          .strict-text {
+            position: absolute;
+            font-size: 10px;
+            left: 119px;
+            top: 13px;
+          }
+          .strict-bg {
+            position: absolute;
+            top: 7px;
+            left: 128px;
+            border-radius: 50%;
+            background-color: $black;
+            height: 20px;
+            width: 20px;
+            .strict-btn {
+              position: absolute;
+              left: 2px;
+              top: 2px;
+              height: 16px;
+              width: 16px;
+              background-color: #fbbc05;
+              border-radius: 50%;
+              box-shadow: 0 1px 3px black;
+              &:active {
+                transform: scale(0.8);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#turned-on {
+  transform: translateX(31px);
+}
+
+.active-green {
+  background-color: $active-green !important;
+}
+
+.active-red {
+  background-color: $active-red !important;
+}
+
+.active-blue {
+  background-color: $active-blue !important;
+}
+
+.active-yellow {
+  background-color: $active-yellow !important; 
+}
+
+.shake-effect {
+  animation: shake .1s linear infinite;
+}
+
+@keyframes shake {
+  0% {
+  }
+  50% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(-5px);
+  }
+}
