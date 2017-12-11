@@ -30,6 +30,7 @@ class App extends React.Component {
     }
   }
   
+  // handles click event on ColorButton component
   handleColorClick(e) {
     let actions = this.state.actions.slice();
     if (this.state.power && !this.state.active) {
@@ -68,6 +69,7 @@ class App extends React.Component {
     }
   }
   
+  // handles click event on StrictButton component
   handleStrictClick() {
     if (this.state.strict) {
       this.setState({
@@ -80,6 +82,7 @@ class App extends React.Component {
     }
   }
   
+  // handles click event on PowerButton component
   handlePowerClick() {
     if (this.state.power) {
       this.setState({
@@ -188,6 +191,8 @@ class App extends React.Component {
     }, 800);
   }
   
+  // increment the count by one then add new color to Action state, play sequence of colors in action stat
+  // then check victory condition
   play() {
     if (this.state.power && this.state.gameStarted && !this.state.active && this.state.count <= 19) {
       this.setState({
@@ -211,6 +216,7 @@ class App extends React.Component {
     }, 500);
   }
   
+  // handle click event on StartButton component
   handleStartClick() {
     if (this.state.power && !this.state.active && !this.state.gameStarted) {
       this.setState({
@@ -221,6 +227,7 @@ class App extends React.Component {
     }  
   }
   
+  // set count to WIN and lock the game with active state until powered off or reset
   victory() {
     if (this.state.count == 20) {
       this.setState({
