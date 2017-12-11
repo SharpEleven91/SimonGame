@@ -283,7 +283,7 @@ class App extends React.Component {
 
 
 
-ReactDOM.render(
-<App/>, document.getElementById('frame'));
+//ReactDOM.render(
+//<App/>, document.getElementById('frame'));
 
 export default App
