@@ -1,5 +1,5 @@
 ## Description
-- A Classic Simon Game Clone
+A Classic Simon Game Clone
 
 ## Dependencies
 - React
